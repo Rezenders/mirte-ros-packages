@@ -1,0 +1,5 @@
+repositories:
+  web_video_server:
+    type: git
+    url: https://github.com/RobotWebTools/web_video_server.git
+    version: 95f9b70d543c4562b87c126514ed359c84679d7c

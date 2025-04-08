@@ -1,0 +1,30 @@
+Format: 1.8
+Date: Sat, 26 Oct 2024 00:00:00 -0000
+Source: ros-humble-web-video-server
+Binary: ros-humble-web-video-server
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 2.0.1-5-g95f9b70-2025.04.08.12.00
+Distribution: jammy
+Urgency: high
+Maintainer: Błażej Sowa <blazej@fictionlab.pl>
+Changed-By: Błażej Sowa <blazej@fictionlab.pl>
+Description:
+ ros-humble-web-video-server - HTTP Streaming of ROS Image Topics in Multiple Formats
+Changes:
+ ros-humble-web-video-server (2.0.1-5-g95f9b70-2025.04.08.12.00) jammy; urgency=high
+ .
+   * Add ros_environment to test dependencies (#166)
+   * Contributors: Błażej Sowa
+Checksums-Sha1:
+ 2fd76974335e08a0129e5e3eed3fea82061e4de4 5966032 ros-humble-web-video-server-dbgsym_2.0.1-5-g95f9b70-2025.04.08.12.00_amd64.ddeb
+ 5b69de16a31d303f7435e54d5a50e7bd038a5cfb 34971 ros-humble-web-video-server_2.0.1-5-g95f9b70-2025.04.08.12.00_amd64.buildinfo
+ cc7afafc5b73d3e45d43aeaef665ebea890e2395 183322 ros-humble-web-video-server_2.0.1-5-g95f9b70-2025.04.08.12.00_amd64.deb
+Checksums-Sha256:
+ 43f7b7e02cd656f5cebc9187f3854b2a49a33a6f4806b10b3034ee0f9d923bf5 5966032 ros-humble-web-video-server-dbgsym_2.0.1-5-g95f9b70-2025.04.08.12.00_amd64.ddeb
+ fa6467c382ebf3adb8819e1653faea1337a001189f3072c70310ef94032f3cea 34971 ros-humble-web-video-server_2.0.1-5-g95f9b70-2025.04.08.12.00_amd64.buildinfo
+ a504d1603a349c87d04c74c627be144d12c754780e38504f5e0cdbacc4ac3903 183322 ros-humble-web-video-server_2.0.1-5-g95f9b70-2025.04.08.12.00_amd64.deb
+Files:
+ 2d869bf3982ae6f50cd480d1283aa693 5966032 debug optional ros-humble-web-video-server-dbgsym_2.0.1-5-g95f9b70-2025.04.08.12.00_amd64.ddeb
+ c340444d0735350380818ab8ba4561fc 34971 misc optional ros-humble-web-video-server_2.0.1-5-g95f9b70-2025.04.08.12.00_amd64.buildinfo
+ 0949ae5987693432bfb568751656e085 183322 misc optional ros-humble-web-video-server_2.0.1-5-g95f9b70-2025.04.08.12.00_amd64.deb
