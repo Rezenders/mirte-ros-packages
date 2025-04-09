@@ -118,11 +118,15 @@
 
      <xacro:macro name="sensor_orbbec_astra_pro_plus_gazebo">
           <gazebo reference="${name}_link">
-             <sensor name="${name}" type="depth">
+             <sensor name="${name}" type="depth_camera">
+                <always_on>true</always_on>
                 <visualize>true</visualize>
                 <update_rate>60.0</update_rate>
+                <gz_frame_id>${name}_depth_optical_frame</gz_frame_id>
+                <topic>camera/image_raw</topic> <!-- check later -->
                 <camera name="RS_D455">
                     <horizontal_fov>${60.0*M_PI/180.0}</horizontal_fov>
+                    <camera_info_topic>camera/camera_info</camera_info_topic> <!-- check later -->
                     <image>
                         <width>${rgb_w}</width>
                         <height>${rgb_h}</height>
@@ -132,25 +136,7 @@
                         <near>0.05</near>
                         <far>10.0</far>
                     </clip>
-                </camera>
-                <plugin name="${name}_controller" filename="libgazebo_ros_camera.so">
-                    <baseline>0.1</baseline>
-                    <alwaysOn>true</alwaysOn>
-                    <updateRate>30</updateRate>
-                    <frame_name>${name}_depth_optical_frame</frame_name>
-                    <pointCloudCutoff>0.6</pointCloudCutoff>
-                    <pointCloudCutoffMax>8.0</pointCloudCutoffMax>
-                    <distortionK1>0</distortionK1>
-                    <distortionK2>0</distortionK2>
-                    <distortionK3>0</distortionK3>
-                    <distortionT1>0</distortionT1>
-                    <distortionT2>0</distortionT2>
-                    <CxPrime>0</CxPrime>
-                    <Cx>0</Cx>
-                    <Cy>0</Cy>
-                    <focalLength>0</focalLength>
-                    <hackBaseline>0</hackBaseline>
-                </plugin>
+                </camera>  
             </sensor>
          </gazebo>
      </xacro:macro>
