@@ -132,12 +132,23 @@
 </ros2_control>
 
 <gazebo>
+    <plugin filename="ignition-gazebo-odometry-publisher-system"
+            name="ignition::gazebo::systems::OdometryPublisher">
+      <!-- Default from gz-sim was set to /model/mpo_700/topic and /mpo_700/frame on July 2023 -->
+      <odom_frame>odom</odom_frame> 
+      <odom_covariance_topic>odom</odom_covariance_topic>
+      <tf_topic>tf</tf_topic>
+      <robot_base_frame>base_link</robot_base_frame>
+      <odom_publish_frequency>100</odom_publish_frequency>
+    </plugin>
+    
     <plugin filename="ign_ros2_control-system" name="ign_ros2_control::IgnitionROS2ControlPlugin">
        <parameters>$(find mirte_base_control)/config/mirte_base_control.yaml</parameters>
        <xacro:if value="$(arg arm_enable)">
           <parameters>$(find mirte_master_arm_control)/config/mirte_master_arm_control.yaml</parameters>
        </xacro:if>
     </plugin>
+    
     <plugin
       filename="ignition-gazebo-velocity-control-system"
       name="gz::sim::systems::VelocityControl">
