@@ -152,6 +152,10 @@
       name="gz::sim::systems::VelocityControl">
       <topic>cmd_vel</topic>
     </plugin>
+
+    <plugin filename="ignition-gazebo-joint-state-publisher-system" name="ignition::gazebo::systems::JointStatePublisher">
+      <topic>mirte/joint_states</topic>
+    </plugin>
     <!-- <plugin name="libgazebo_ros_p3d" filename="libgazebo_ros_p3d.so">
         <ros>
             <namespace>groundtruth</namespace>
