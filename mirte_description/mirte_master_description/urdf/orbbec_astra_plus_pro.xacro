@@ -121,7 +121,7 @@
              <sensor name="${name}" type="depth_camera">
                 <always_on>true</always_on>
                 <visualize>true</visualize>
-                <update_rate>60.0</update_rate>
+                <update_rate>30.0</update_rate>
                 <gz_frame_id>${name}_depth_optical_frame</gz_frame_id>
                 <topic>camera/image_raw</topic> <!-- check later -->
                 <camera name="RS_D455">
