@@ -44,7 +44,7 @@
 <ros2_control name="ros2_arm_control" type="system">
       <hardware>
         <xacro:if value="$(arg sim)">
-          <plugin>ign_ros2_control/IgnitionSystem</plugin>
+          <plugin>gz_ros2_control/GazeboSimSystem</plugin>
         </xacro:if>
         <xacro:unless value="$(arg sim)">
           <plugin>mirte_master_arm_control/MirteMasterArmHWInterface</plugin>
@@ -86,7 +86,7 @@
 <ros2_control name="ros2_gripper_control" type="system">
      <hardware>
         <xacro:if value="$(arg sim)">
-          <plugin>ign_ros2_control/IgnitionSystem</plugin>
+          <plugin>gz_ros2_control/GazeboSimSystem</plugin>
         </xacro:if>
         <xacro:unless value="$(arg sim)">
           <plugin>mirte_master_arm_control/MirteMasterArmHWInterface</plugin>
@@ -140,7 +140,7 @@
       <odom_publish_frequency>100</odom_publish_frequency>
     </plugin>
     
-    <plugin filename="ign_ros2_control-system" name="ign_ros2_control::IgnitionROS2ControlPlugin">
+    <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
        <parameters>$(find mirte_base_control)/config/mirte_base_control.yaml</parameters>
        <xacro:if value="$(arg arm_enable)">
           <parameters>$(find mirte_master_arm_control)/config/mirte_master_arm_control.yaml</parameters>
