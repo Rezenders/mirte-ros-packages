@@ -84,7 +84,7 @@
             <frame>lidar_link</frame>
             <gz_frame_id>lidar_link</gz_frame_id>
             <always_on>true</always_on>
-            <topic>/scan</topic>
+            <topic>/scan_unfiltered</topic>
             <lidar>
                 <scan>
                     <horizontal>
