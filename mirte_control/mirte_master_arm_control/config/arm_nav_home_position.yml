@@ -1,0 +1,5 @@
+arm_home_publisher:
+  ros__parameters:
+    joint_names: ['shoulder_pan_joint', 'shoulder_lift_joint', 'elbow_joint', 'wrist_joint']
+    positions: [-0.0014559920463634742, 1.415918625432497, -1.5706991018294059, -1.570750919481129]
+    time_from_start: 5.0
