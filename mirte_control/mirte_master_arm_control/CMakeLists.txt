@@ -13,6 +13,7 @@ find_package(hardware_interface REQUIRED)
 find_package(pluginlib REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclcpp_lifecycle REQUIRED)
+find_package(trajectory_msgs REQUIRED)
 # find dependencies
 set(THIS_PACKAGE_INCLUDE_DEPENDS
     hardware_interface
@@ -23,6 +24,7 @@ set(THIS_PACKAGE_INCLUDE_DEPENDS
     std_srvs
     std_msgs
     control_toolbox
+    trajectory_msgs
     yaml_cpp_vendor)
 
 # find dependencies
@@ -51,13 +53,26 @@ target_compile_definitions(${PROJECT_NAME}
 # Export hardware plugins
 pluginlib_export_plugin_description_file(hardware_interface ${PROJECT_NAME}.xml)
 
+add_executable(arm_home_publisher src/mirte_master_arm_control/arm_home_publisher.cpp)
+ament_target_dependencies(arm_home_publisher ${THIS_PACKAGE_INCLUDE_DEPENDS})
+target_include_directories(arm_home_publisher PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>)
+install(TARGETS arm_home_publisher
+  DESTINATION lib/${PROJECT_NAME})
+
 # INSTALL
 install(DIRECTORY hardware/include/ DESTINATION include/${PROJECT_NAME})
 # install( DIRECTORY description/launch description/ros2_control
 # description/urdf description/rviz DESTINATION share/${PROJECT_NAME} )
-install(DIRECTORY bringup/launch bringup/config 
-bringup/urdf
-        DESTINATION share/${PROJECT_NAME})
+install(DIRECTORY
+  bringup/launch
+  bringup/config
+  bringup/urdf
+  DESTINATION share/${PROJECT_NAME})
+
+install(DIRECTORY config
+  DESTINATION share/${PROJECT_NAME}/)
 install(
   TARGETS ${PROJECT_NAME}
   EXPORT export_${PROJECT_NAME}

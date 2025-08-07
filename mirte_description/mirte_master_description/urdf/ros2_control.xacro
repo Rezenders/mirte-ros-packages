@@ -42,20 +42,20 @@
 
 
 <ros2_control name="ros2_arm_control" type="system">
-      <hardware>
-        <xacro:if value="$(arg sim)">
-          <plugin>ign_ros2_control/IgnitionSystem</plugin>
-        </xacro:if>
-        <xacro:unless value="$(arg sim)">
-          <plugin>mirte_master_arm_control/MirteMasterArmHWInterface</plugin>
-        </xacro:unless>
-      </hardware>
+    <hardware>
+      <xacro:if value="$(arg sim)">
+        <plugin>ign_ros2_control/IgnitionSystem</plugin>
+      </xacro:if>
+      <xacro:unless value="$(arg sim)">
+        <plugin>mirte_master_arm_control/MirteMasterArmHWInterface</plugin>
+      </xacro:unless>
+    </hardware>
 
-   <joint name="shoulder_pan_joint">
+    <joint name="shoulder_pan_joint">
         <command_interface name="position"/>
         <state_interface name="position"/>
         <state_interface name="velocity" />
-   </joint>
+    </joint>
 
     <joint name="shoulder_lift_joint">
         <command_interface name="position"/>
