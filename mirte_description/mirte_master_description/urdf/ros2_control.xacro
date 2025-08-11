@@ -133,10 +133,10 @@
     <plugin filename="ignition-gazebo-odometry-publisher-system"
             name="ignition::gazebo::systems::OdometryPublisher">
       <odom_frame>odom</odom_frame> 
-      <odom_covariance_topic>odom</odom_covariance_topic>
+      <odom_topic>odom</odom_topic>
       <tf_topic>tf</tf_topic>
       <robot_base_frame>base_link</robot_base_frame>
-      <odom_publish_frequency>100</odom_publish_frequency>
+      <odom_publish_frequency>50</odom_publish_frequency>
       <xacro:if value="$(arg noise)">
         <gaussian_noise>0.05</gaussian_noise>
       </xacro:if>
