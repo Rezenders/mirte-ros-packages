@@ -137,7 +137,9 @@
       <tf_topic>tf</tf_topic>
       <robot_base_frame>base_link</robot_base_frame>
       <odom_publish_frequency>100</odom_publish_frequency>
-      <gaussian_noise>0.05</gaussian_noise>
+      <xacro:if value="$(arg noise)">
+        <gaussian_noise>0.05</gaussian_noise>
+      </xacro:if>
     </plugin>
     
     <plugin filename="ign_ros2_control-system" name="ign_ros2_control::IgnitionROS2ControlPlugin">

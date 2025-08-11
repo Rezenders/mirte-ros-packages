@@ -99,11 +99,13 @@
                     <max>12</max>
                     <resolution>0.015</resolution>
                 </range>
-                <noise>
-                  <type>gaussian</type>
-                  <mean>0</mean>
-                  <stddev>0.0165</stddev>
-                </noise>
+                <xacro:if value="$(arg noise)">
+                  <noise>
+                    <type>gaussian</type>
+                    <mean>0</mean>
+                    <stddev>0.0165</stddev>
+                  </noise>
+                </xacro:if>
             </lidar>
         </sensor>
     </gazebo>
