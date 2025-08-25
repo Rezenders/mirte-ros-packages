@@ -1,6 +1,5 @@
 #pragma once
 #include <atomic>
-#include <mutex>
 
 #include <rclcpp/rclcpp.hpp>
 
@@ -30,8 +29,7 @@ public:
 private:
   /// @brief The last recorded distance.
   std::atomic<double> distance = NAN;
-  std::mutex msg_mutex;
-  sensor_msgs::msg::Range range;
+  sensor_msgs::msg::Range range_msg_;
 
   // Publisher: distance/NAME
   rclcpp::Publisher<sensor_msgs::msg::Range>::SharedPtr sonar_pub;
